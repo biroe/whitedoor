@@ -1,0 +1,72 @@
+<section class="heading">
+    <h1>We are WhiteDoor</h1>
+</section>
+
+<section id="updates">
+    <div><table></table></div>
+</section>
+
+<section class="flex">
+    <div class="flex-container">
+        <dl>
+            <dt><img src="img/tom.jpg" alt="tom"></dt>
+            <dd>
+                <h3>海外生活のサポート</h3>
+                <p class="desc">
+                    White Door内でのイベントは全てこちらで企画します。
+                </p><p class="desc">
+                    このセクターの主な活動としては、メンバー内の交流を深めたり、後の人脈の形成のために不定期でイベントを行っています。例として食事会、field trip、スポーツ大会などクラブメンバーに楽しんでもらえるような企画を開催しています。
+                </p><p class="desc">
+                    またイベントの企画だけではなく、実際に語学学校に赴き、私たちがどういう団体でどのような活動をするのか説明会を開いたりなど広報活動なども行ったりします。
+                </p>
+            </dd>
+        </dl>
+        <dl>
+            <dt><img src="img/tom.jpg" alt="tom"></dt>
+            <dd>
+                <h3>コミュニティ交流</h3>
+                <p class="desc">
+                    White Door内でのイベントは全てこちらで企画します。
+                </p><p class="desc">
+                    このセクターの主な活動としては、メンバー内の交流を深めたり、後の人脈の形成のために不定期でイベントを行っています。
+                </p><p class="desc">
+                    例として食事会、field trip、スポーツ大会などクラブメンバーに楽しんでもらえるような企画を開催しています。
+                </p><p class="desc">
+                    またイベントの企画だけではなく、実際に語学学校に赴き、私たちがどういう団体でどのような活動をするのか説明会を開いたりなど広報活動なども行ったりします。
+                </p>
+            </dd>
+        </dl>
+        <dl>
+            <dt><img src="img/tom.jpg" alt="tom"></dt>
+            <dd>
+                <h3>教科書の貸し出し</h3>
+                <p class="desc">
+                    De Anza Community Collegeで受けることのできる授業の教科書貸し出しをしています。
+                </p><p class="desc">
+                    先輩方々が以前取っていた授業の教科書や周りから提供していただいた教科書を管理し、貸し出します。
+                </p><p class="desc">
+                    必要な教科書があれば学校で買うよりも安く貸し出します。
+                </p><p class="desc">
+                    教科書の在庫確認は<a href="#">_link_</a>でご確認ください。
+                </p>
+            </dd>
+        </dl>
+    </div>
+</section>
+
+<script>
+    // Updates
+    $.ajax({
+        url: 'pages/updates.txt',
+        dataType: 'text',
+        success: function(data) {
+            updates = data.split('\n---\n')
+            for (i in updates) {
+                $('#updates table').append(`<tr uNum="${i}"></tr>`)
+                uInfo = updates[i].split('\n')
+                for (j in uInfo)
+                    $(`#updates tr[uNum="${i}"]`).append(`<td>${uInfo[j]}</td>`)
+            }
+        }
+    })
+</script>
